@@ -33,10 +33,17 @@ export const Forms = ({
             <Form.Group as={Col}>
               <Form.Label>Number</Form.Label>
               <Form.Control
-                type="number"
+                type="text"
                 placeholder="Enter the Number"
                 value={number}
-                onChange={(e) => setNumber(e.target.value)}
+                pattern="\d+"
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Only allow digits (0-9)
+                  if (/^\d*$/.test(value)) {
+                    setNumber(value);
+                  }
+                }}
               />
             </Form.Group>
             <Form.Group as={Col}>
