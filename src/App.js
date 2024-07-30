@@ -60,7 +60,7 @@ export const App = () => {
   };
 
   const filteredList = list.filter((el) =>
-    el.name.toLowerCase().includes(search.toLowerCase())
+    el.name?.toLowerCase().includes(search.toLowerCase())
   );
 
   React.useEffect(() => {
